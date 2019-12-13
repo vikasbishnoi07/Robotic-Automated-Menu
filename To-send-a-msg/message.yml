@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks: 
+   - twilio:
+      msg: "{{ var2 }}"
+      account_sid: "AC06c462e8fb5ff602dbe1982b85b3536f"
+      auth_token: "301d371f3bbac9087b6117b353e08c27"
+      from_number: "+15042089031"
+      to_number: "{{ var1 }}"
+  
