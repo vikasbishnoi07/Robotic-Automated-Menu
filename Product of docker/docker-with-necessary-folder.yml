@@ -1,0 +1,17 @@
+- hosts: all
+  tasks:
+    - package:
+        name: "docker-ce"
+        state: present
+    - service:
+        name: "docker"
+        state: started
+        enabled: yes
+    - docker_image:
+        name: new
+        source: load
+        load_path: centos-latest.tar
+        #    state: present
+        path: /root/rhel7_5_software_extras/
+        
+      ignore_errors: yes 
