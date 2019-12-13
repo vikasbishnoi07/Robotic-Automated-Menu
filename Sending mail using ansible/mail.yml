@@ -1,0 +1,21 @@
+- name: Mail Sending
+  hosts: localhost
+#  vars:
+ #   - var4: "{{ var1 }}"
+  #  - var5: "{{ var2 }}"
+   # - var6: "{{ var3 }}"
+#  vars_files:
+ #   - mysecure.yml
+  tasks:
+     - name: Mail Sending         
+       mail:
+          host: smtp.gmail.com
+          port: 587
+          username: "amangg999@gmail.com"
+          password: "nnqbjkyrmgtkpzot"
+          to: "<{{ var1 }}>"
+          subject: "{{ var2 }}"
+          body: "{{ var3 }}"
+          secure: starttls
+       delegate_to: localhost
+
