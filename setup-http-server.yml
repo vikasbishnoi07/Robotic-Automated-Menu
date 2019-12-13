@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+         - package:
+              name: httpd
+              state: present            
+         - service: 
+              name: httpd
+              state: started
+              enabled: yes
+         - firewalld:
+              state: started
+              enabled: yes
+              port: 80/tcp
+              immediate: yes
+              permanent: yes
