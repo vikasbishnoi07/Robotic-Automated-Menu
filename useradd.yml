@@ -1,0 +1,15 @@
+
+    - name: useradd
+      hosts: localhost
+     # var_prompt:
+      #  name: var1
+       # prompt: Enter User Name
+      vars:
+        var2: "{{var1}}"   
+      
+      tasks:
+         - name: UserAdd
+           user: 
+                name: "{{var2}}"
+                state: present
+                password: aman
