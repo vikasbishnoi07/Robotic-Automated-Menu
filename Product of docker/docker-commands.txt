@@ -1,0 +1,18 @@
+ docker run -it --name yum --device /dev/video0 -v /run/media/root/RHEL-7.5\ Server.x86_64/:/dvd -v /root/Desktop/rhel7_5_rpm_extras/:/extra1 -v /root/Desktop/rhel7_extra_new_rpm/:/extra2 -v /root/Desktop/python_lib/:/python_lib  -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /var/run/docker.sock:/var/run -e DISPLAY=$DISPLAY       centos
+
+[dvd]
+baseurl=file:///dvd
+gpgcheck=0
+
+[dvd1]
+baseurl=file:///extra1
+gpgcheck=0
+
+[dvd2]
+baseurl=file:///extra2
+gpgcheck=0
+
+/usr/sbin/httpd to run webpage in docker
+
+
+ docker run -it --name yum --device /dev/video0 -v /run/media/root/RHEL-7.5\ Server.x86_64/:/dvd -v /root/Desktop/rhel7_5_rpm_extras/:/extra1 -v /root/Desktop/rhel7_extra_new_rpm/:/extra2 -v /root/Desktop/python_lib/:/python_lib  -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /var/run/docker.sock:/var/run -e DISPLAY=$DISPLAY    --pri    centos
