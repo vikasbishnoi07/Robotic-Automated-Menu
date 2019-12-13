@@ -1,0 +1,27 @@
+- hosts: slave
+  tasks:
+
+    - name: Create directory
+      file:
+        path: /data
+        state: directory
+
+    - copy:
+        src: "/var/www/cgi-bin/core-site.xml"
+        dest: "/etc/hadoop/core-site.xml"
+
+
+    - copy:
+        src: "/var/www/cgi-bin/hdfs-site.xml"
+        dest: "/etc/hadoop/hdfs-site.xml"
+    
+    - service:
+        name: firewalld
+        state: stopped
+
+- hosts: all
+  tasks:
+
+    - copy:
+        src: "/etc/hosts"
+        dest: "/etc/hosts"
